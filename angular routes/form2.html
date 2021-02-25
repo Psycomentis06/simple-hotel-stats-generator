@@ -1,0 +1,98 @@
+<h1 class="text-center">Create stat based on the hotel rented nights</h1>
+<br><br>
+<form method="post" action="/" name="form2" id="withnights">
+    <div class="form-row">
+        <div class="col">
+            <fieldset class="border p-5">
+                <legend class="my-auto">
+                    Nights
+                </legend>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="f2_single_nights">Single Rooms</label>
+                        <input type="number" name="single_nights" id="f2_single_nights" class="form-control" placeholder="ex: 30">
+                        <div class="invalid-feedback" id="f2_single_nights_feedback">
+                            <!-- Validation Error msg -->
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="f2_dual_nights">Dual Rooms</label>
+                        <input type="number" name="dual_nights" id="f2_dual_nights" class="form-control" placeholder="ex: 30">
+                        <div class="invalid-feedback" id="f2_dual_nights_feedback">
+                            <!-- Validation Error msg -->
+                        </div>
+                    </div>
+                </div>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>Note:!</strong> This values can be approximate numbers
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="form-row mt-5">
+        <div class="col">
+            <fieldset class="border p-5">
+                <legend class="w-auto">Réstauration</legend>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="f2_food_percent">Food Percent</label>
+                        <div class="input-group">
+                            <input type="number" id="f2_food_percent" name="food_percent" class="form-control" placeholder="ex: 50">
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                            <div id="f2_food_percent_feedback" class="invalid-feedback">
+                                <!-- validation feed back -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="f2_drink_percent">Drink Percent</label>
+                        <div class="input-group">
+                            <input type="number" id="f2_drink_percent" name="drink_percent" class="form-control" placeholder="ex: 50">
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                            <div id="f2_drink_percent_feedback" class="invalid-feedback">
+                                <!-- validation feed back -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+
+    <div class="form-row mt-2">
+        <div class="col">
+            <label for="f2_host_percent">Host Percent</label>
+            <div class="input-group">
+                <input type="number" name="host" id="f2_host_percent" class="form-control" placeholder="ex: 30">
+                <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                </div>
+                <div class="invalid-feedback" id="f2_host_percent_feedback">
+                    <!-- Validation Error msg -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <label for="f2_date">Date</label>
+            <input type="date" name="date" id="f2_date" class="form-control">
+            <div class="invalid-feedback" id="f2_date_feedback">
+                <!-- Validation Error msg -->
+            </div>
+        </div>
+    </div>
+    <div class="form-row mt-5">
+        <div class="col">
+            <input type="hidden" name="ajax" value="false">
+            <input type="hidden" name="withnights">
+            <input type="submit" value="Submit" class="form-control" onclick="Form2Validation();">
+        </div>
+    </div>
+</form>

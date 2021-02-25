@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowJs": true,
+        "module": "commonjs",
+        "target": "ES5",
+        "outDir": "js",
+    },
+    "files": [
+        "ts/app.ts",
+    ],
+}

@@ -1,0 +1,143 @@
+// Import dependencies
+@import '_varibles.scss';
+@import "_mixin.scss";
+.cv {
+    // center vertically
+    @include CenterVertically;
+}
+
+.alert {
+    margin: 0 auto;
+}
+
+.view-animate-container {
+    position: relative;
+}
+
+.view-animate {
+    padding: 10px;
+}
+
+.view-animate.ng-enter {
+    opacity: 0;
+    transition: all 1s;
+}
+
+.view-animate.ng-leave {
+    opacity: 1;
+}
+
+.view-animate.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+.view-animate.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.custom-nav {
+    width: 100%;
+    .list-parent {
+        width: 100%;
+        margin-top: 10px;
+        list-style: none;
+        position: relative;
+        display: flex;
+        column-gap: 20px;
+        justify-content: space-between;
+        .list {
+            display: inline-block;
+            color: #636363;
+            &.en {
+                // if language is english
+                &:nth-child(1).active~.list-box {
+                    width: 140px;
+                    left: 50px;
+                }
+                &:nth-child(2).active~.list-box {
+                    width: 150px;
+                    left: 200px;
+                }
+            }
+            &.fr {
+                &:nth-child(1).active~.list-box {
+                    width: 230px;
+                    left: 50px;
+                }
+                &:nth-child(2).active~.list-box {
+                    width: 210px;
+                    left: 300px;
+                }
+            }
+            &.ar {
+                &:nth-child(1).active~.list-box {
+                    width: 180px;
+                    left: 50px;
+                }
+                &:nth-child(2).active~.list-box {
+                    width: 190px;
+                    left: 240px;
+                }
+            }
+        }
+        .list-box {
+            // animated moving border
+            width: 150px;
+            border-bottom: 2px solid red;
+            position: absolute;
+            bottom: 0;
+            left: 50px;
+            transition: all ease-in-out .6s;
+        }
+        .active {
+            color: red;
+        }
+    }
+}
+
+// table row hightlight
+.table {
+    .danger-row {
+        background-color: #d9534f;
+    }
+    .selected-row {
+        background-color: #292b2c;
+        color: #f7f7f7;
+    }
+    .warning-row {
+        background-color: #f0ad4e;
+    }
+}
+
+.credit-wrapper {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    font: 300 24px/1 'Open Sans Condensed', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    color: #292b2c;
+    animation: 120s credits linear infinite;
+    .line {
+        margin-bottom: 50px;
+        font-size: 10pt;
+    }
+}
+
+.modal-body.overflow-hidden {
+    position: relative;
+    height: 600px;
+    overflow: scroll;
+}
+
+// animation
+@keyframes credits {
+    0% {
+        top: 100%;
+    }
+    100% {
+        top: -500%;
+    }
+}

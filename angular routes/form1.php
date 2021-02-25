@@ -1,0 +1,87 @@
+<?php 
+
+if (empty($_COOKIE['language'])) {
+    die('Invalid Language');
+} else {
+    require_once __DIR__.'/../locale/'.$_COOKIE['language'].'.php';
+    $langData = $data['stats']['withIncome'];
+
+echo '<h1 class="text-center">'.$langData['second_title'].'</h1>';
+echo '<br><br>';
+echo '<form method="post" action="/" name="form1" id="withincome" >';
+echo '    <div class="form-row">';
+echo '        <div class="col">';
+echo '            <label for="f1_hotel_income">'. $langData['form']['labels']['income'] .'</label>';
+echo '            <div class="input-group">';
+echo '                <input type="number" name="income" class="form-control" placeholder="ex: 5000" id="f1_hotel_income">';
+echo '                <div class="input-group-append">';
+echo '                    <span class="input-group-text">TND</span>';
+echo '                </div>';
+echo '                <div id="f1_hotel_income_feedback" class="invalid-feedback">';
+echo '                    <!-- validation feed back -->';
+echo '                </div>';
+echo '            </div>';
+echo '        </div>';
+echo '        <div class="col">';
+echo '            <label for="f1_host_percent">'. $langData['form']['labels']['host'] .'</label>';
+echo '            <div class="input-group">';
+echo '                <input type="number" id="f1_host_percent" name="host" class="form-control" placeholder="ex: 40">';
+echo '                <div class="input-group-append">';
+echo '                    <span class="input-group-text">%</span>';
+echo '                </div>';
+echo '                <div id="f1_host_percent_feedback" class="invalid-feedback">';
+echo '                    <!-- validation feed back -->';
+echo '                </div>';
+echo '            </div>';
+echo '        </div>';
+echo '    </div>';
+echo '    <div class="form-row mt-5">';
+echo '        <div class="col">';
+echo '            <label for="f1_date">'. $langData['form']['labels']['date'] .'</label>';
+echo '            <input type="date" name="date" id="f1_date" class="form-control">';
+echo '            <div id="f1_date_feedback" class="invalid-feedback">';
+echo '                <!-- validation feed back -->';
+echo '            </div>';
+echo '        </div>';
+echo '    </div>';
+echo '';
+echo '    <div class="form-row mt-5">';
+echo '        <div class="col">';
+echo '            <fieldset class="border p-5">';
+echo '                <legend class="w-auto">'. $langData['form']['food'] .'</legend>';
+echo '                <div class="form-row">';
+echo '                    <div class="col">';
+echo '                        <label for="f1_food_percent">'. $langData['form']['labels']['food'] .'</label>';
+echo '                        <div class="input-group">';
+echo '                            <input type="number" id="f1_food_percent" name="food_percent" class="form-control" placeholder="ex: 50">';
+echo '                            <div class="input-group-append">';
+echo '                                <span class="input-group-text">%</span>';
+echo '                            </div>';
+echo '                            <div id="f1_food_percent_feedback" class="invalid-feedback">';
+echo '                                <!-- validation feed back -->';
+echo '                            </div>';
+echo '                        </div>';
+echo '                    </div>';
+echo '                    <div class="col">';
+echo '                        <label for="f1_drink_percent">'. $langData['form']['labels']['drink'] .'</label>';
+echo '                        <div class="input-group">';
+echo '                            <input type="number" id="f1_drink_percent" name="drink_percent" class="form-control" placeholder="ex: 50">';
+echo '                            <div class="input-group-append">';
+echo '                                <span class="input-group-text">%</span>';
+echo '                            </div>';
+echo '                            <div id="f1_drink_percent_feedback" class="invalid-feedback">';
+echo '                                <!-- validation feed back -->';
+echo '                            </div>';
+echo '                        </div>';
+echo '                    </div>';
+echo '                </div>';
+echo '            </fieldset>';
+echo '        </div>';
+echo '    </div>';
+echo '    <input type="hidden" name="ajax" value="false" id="f1_ajax">';
+echo '    <input type="hidden" name="withincome">';
+echo '    <input type="submit" value="'. $langData['form']['submit'] .'" class="form-control" onclick="Form1Validaton();">';
+echo '';
+echo '</form>';
+
+}

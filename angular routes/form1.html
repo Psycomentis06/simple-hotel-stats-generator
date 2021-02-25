@@ -1,0 +1,77 @@
+<h1 class="text-center">Create stat based on the hotel income</h1>
+<br><br>
+<form method="post" action="/" name="form1" id="withincome" >
+    <div class="form-row">
+        <div class="col">
+            <label for="f1_hotel_income">Hotel Income</label>
+            <div class="input-group">
+                <input type="number" name="income" class="form-control" placeholder="ex: 5000" id="f1_hotel_income">
+                <div class="input-group-append">
+                    <span class="input-group-text">TND</span>
+                </div>
+                <div id="f1_hotel_income_feedback" class="invalid-feedback">
+                    <!-- validation feed back -->
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <label for="f1_host_percent">Host Percent</label>
+            <div class="input-group">
+                <input type="number" id="f1_host_percent" name="host" class="form-control" placeholder="ex: 40">
+                <div class="input-group-append">
+                    <span class="input-group-text">%</span>
+                </div>
+                <div id="f1_host_percent_feedback" class="invalid-feedback">
+                    <!-- validation feed back -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row mt-5">
+        <div class="col">
+            <label for="f1_date">Date</label>
+            <input type="date" name="date" id="f1_date" class="form-control">
+            <div id="f1_date_feedback" class="invalid-feedback">
+                <!-- validation feed back -->
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row mt-5">
+        <div class="col">
+            <fieldset class="border p-5">
+                <legend class="w-auto">Réstauration</legend>
+                <div class="form-row">
+                    <div class="col">
+                        <label for="f1_food_percent">Food Percent</label>
+                        <div class="input-group">
+                            <input type="number" id="f1_food_percent" name="food_percent" class="form-control" placeholder="ex: 50">
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                            <div id="f1_food_percent_feedback" class="invalid-feedback">
+                                <!-- validation feed back -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="f1_drink_percent">Drink Percent</label>
+                        <div class="input-group">
+                            <input type="number" id="f1_drink_percent" name="drink_percent" class="form-control" placeholder="ex: 50">
+                            <div class="input-group-append">
+                                <span class="input-group-text">%</span>
+                            </div>
+                            <div id="f1_drink_percent_feedback" class="invalid-feedback">
+                                <!-- validation feed back -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </div>
+    <input type="hidden" name="ajax" value="false" id="f1_ajax">
+    <input type="hidden" name="withincome">
+    <input type="submit" value="Submit" class="form-control" onclick="Form1Validaton();">
+
+</form>
